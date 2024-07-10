@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Usage on Fruits and Vegetables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        
+        main {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        
+        section {
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #question-box {
+            margin-top: 20px;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chemical Usage on Fruits and Vegetables</h1>
+        <p>Welcome to our informative website!</p>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>About Chemical Usage</h2>
+            <p>Information about chemicals used in agriculture...</p>
+        </section>
+        
+        <section id="health">
+            <h2>Health and Environmental Impacts</h2>
+            <p>Details on health impacts and environmental concerns...</p>
+        </section>
+        
+        <section id="tips">
+            <h2>Choosing Safe Produce</h2>
+            <p>Tips for consumers on reducing exposure to chemicals...</p>
+        </section>
+        
+        <section id="faq">
+            <h2>FAQ</h2>
+            <div id="faq-list">
+                <h3>Common Questions</h3>
+                <ul>
+                    <li><strong>Q:</strong> What are the regulations on pesticide residues?</li>
+                    <li><strong>Q:</strong> How can I tell if produce is organic?</li>
+                    <!-- Add more FAQ items here -->
+                </ul>
+            </div>
+            
+            <div id="question-box">
+                <h3>Ask a Question</h3>
+                <form id="question-form" onsubmit="return submitQuestion()">
+                    <label for="question">Your Question:</label><br>
+                    <textarea id="question" name="question" rows="4" required></textarea><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Contact us for more information</p>
+    </footer>
+
+    <script>
+        function submitQuestion() {
+            var question = document.getElementById('question').value;
+            var faqList = document.getElementById('faq-list').getElementsByTagName('ul')[0];
+            var newQuestion = document.createElement('li');
+            newQuestion.innerHTML = '<strong>Q:</strong> ' + question;
+            faqList.appendChild(newQuestion);
+            document.getElementById('question-form').reset(); // Reset the form after submission
+            return false; // Prevent the form from actually submitting
+        }
+    </script>
+</body>
+</html>
